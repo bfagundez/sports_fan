@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  height: 9.99
+  weight: 9.99
+  is_public: false
+  team: one
+
+two:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  height: 9.99
+  weight: 9.99
+  is_public: false
+  team: two
