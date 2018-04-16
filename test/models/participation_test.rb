@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PlayerTest < ActiveSupport::TestCase
+class ParticipationTest < ActiveSupport::TestCase
   def setup
     @viktor = players(:viktor)
     @alastor = players(:alastor)
