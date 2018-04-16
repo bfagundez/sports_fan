@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
-  height: 9.99
-  weight: 9.99
+viktor:
+  first_name: Viktor
+  last_name: Krum
+  email: viktor_krum@gmail.com
+  height: 170.0
+  weight: 68.0
   is_public: false
-  team: one
+  teams: the_bulldogs, the_rockets
 
-two:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
-  height: 9.99
-  weight: 9.99
-  is_public: false
-  team: two
+alastor:
+  first_name: Alastor
+  last_name: Moody
+  email: alastor_moody@gmail.com
+  height: 180.2
+  weight: 73.3
+  is_public: true
+  teams: the_rockets
