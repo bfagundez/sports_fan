@@ -4,7 +4,7 @@ class PlayerTest < ActiveSupport::TestCase
   def setup
     @viktor = players(:viktor)
     @alastor = players(:alastor)
-  end 
+  end
 
   test '#teams' do
     assert_equal 1, @alastor.teams.size

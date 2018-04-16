@@ -1,3 +1,4 @@
+# Main list of sports
 class Sport < ApplicationRecord
   has_many :interests
   has_many :participations

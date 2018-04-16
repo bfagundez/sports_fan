@@ -4,7 +4,7 @@ class TeamTest < ActiveSupport::TestCase
   def setup
     @the_bulldogs = teams(:the_bulldogs)
     @the_rockets = teams(:the_rockets)
-  end 
+  end
 
   test '#organization' do
     assert_instance_of Organization, @the_bulldogs.organization

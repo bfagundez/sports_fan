@@ -1,0 +1,11 @@
+AllCops:
+  Exclude:
+    - 'Rakefile'
+    - 'Gemfile'
+    - 'Gemfile.lock'
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'test/test_helper.rb'
+     

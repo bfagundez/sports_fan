@@ -9,7 +9,7 @@ class SportTest < ActiveSupport::TestCase
   test '#interests' do
     assert_equal 1, @archery.interests.size
   end
-  
+
   test '#participations' do
     assert_equal 2, @swimming.interests.size
   end
