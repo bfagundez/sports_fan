@@ -6,8 +6,11 @@ class SportTest < ActiveSupport::TestCase
     @archery = sports(:archery)
   end
 
-  test '#players' do
-    assert_equal 2, @swimming.players.size
-    assert_equal 1, @archery.players.size
+  test '#interests' do
+    assert_equal 1, @archery.interests.size
+  end
+  
+  test '#participations' do
+    assert_equal 2, @swimming.interests.size
   end
 end

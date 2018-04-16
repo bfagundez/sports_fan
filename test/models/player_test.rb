@@ -15,4 +15,8 @@ class PlayerTest < ActiveSupport::TestCase
     assert_equal 1, @viktor.participations.size
     assert_equal 2, @alastor.participations.size
   end
+
+  test '#interests' do
+    assert_equal 2, @viktor.interests.size
+  end
 end
