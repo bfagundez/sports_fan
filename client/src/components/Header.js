@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import { Header, Icon, Divider } from 'semantic-ui-react';
 
-class Header extends Component {
+class AppHeader extends Component {
   render() {
     return (
-      <header className="App-header">
-        <h1 className="App-title">Team manager</h1>
-      </header>
+      <Header as="h1">
+        <Icon name="dashboard" />Team manager
+      </Header>
     );
   }
 }
 
 
-export default Header;
+export default AppHeader;

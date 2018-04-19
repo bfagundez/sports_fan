@@ -1,29 +1,38 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Footer from "components/Footer"
-import Header from "components/Header"
+import AppHeader from "components/Header"
 import Organizations from "containers/Organizations/index.js"
 import Home from "containers/Home/index.js"
+import { Container, List, Icon, Divider } from 'semantic-ui-react'
 
 const App = () => (
-  <div className="App">
-    <Header />
+  <Container >
+    <AppHeader />
       <Router>
-        <div className="app-content">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-           <Link to="/organizations">Organization</Link>
-          </li>
-        </ul>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/organizations" component={Organizations} />
-        </div>
+        <Container>
+          <List horizontal align='center'> 
+            <List.Item>
+              <Icon circular name='home' />
+              <List.Content verticalAlign='middle'>
+                  <Link to="/">Home</Link>
+              </List.Content>
+            </List.Item>
+            <List.Item>
+              <Icon circular name='home' />
+              <List.Content verticalAlign='middle'>
+                 <Link to="/organizations">Organizations</Link>
+              </List.Content>
+            </List.Item>
+          </List>
+          <Container text>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/organizations" component={Organizations} />
+          </Container>
+        </Container>
       </Router>
     <Footer />
-  </div>
+  </Container>
 );
 
 export default App;
