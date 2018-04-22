@@ -1,0 +1,11 @@
+{
+  "name": "team-manager",
+  "engines": {
+    "node": "8.11.1"
+  },
+  "scripts": {
+    "build": "cd client && npm install && npm run build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "NODE_PATH=src/ npm run build && npm run deploy && echo 'Client built!'"
+  }
+}
