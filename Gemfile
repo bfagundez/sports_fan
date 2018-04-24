@@ -10,7 +10,6 @@ gem 'minitest', '~> 5.10.3'
 gem 'rails', '~> 5.0.1'
 gem 'rubocop', require: false
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'foreman', '~> 0.82.0'
 gem 'puma', '~> 3.0'
