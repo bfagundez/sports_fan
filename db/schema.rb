@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20180416031426) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "interests", force: :cascade do |t|
     t.integer  "player_id"
     t.integer  "sport_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["player_id"], name: "index_interests_on_player_id"
-    t.index ["sport_id"], name: "index_interests_on_sport_id"
+    t.index ["player_id"], name: "index_interests_on_player_id", using: :btree
+    t.index ["sport_id"], name: "index_interests_on_sport_id", using: :btree
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -34,8 +37,8 @@ ActiveRecord::Schema.define(version: 20180416031426) do
     t.integer  "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["player_id"], name: "index_participations_on_player_id"
-    t.index ["sport_id"], name: "index_participations_on_sport_id"
+    t.index ["player_id"], name: "index_participations_on_player_id", using: :btree
+    t.index ["sport_id"], name: "index_participations_on_sport_id", using: :btree
   end
 
   create_table "players", force: :cascade do |t|
@@ -48,14 +51,14 @@ ActiveRecord::Schema.define(version: 20180416031426) do
     t.integer  "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["team_id"], name: "index_players_on_team_id"
+    t.index ["team_id"], name: "index_players_on_team_id", using: :btree
   end
 
   create_table "players_teams", id: false, force: :cascade do |t|
     t.integer "team_id",   null: false
     t.integer "player_id", null: false
-    t.index ["player_id", "team_id"], name: "index_players_teams_on_player_id_and_team_id"
-    t.index ["team_id", "player_id"], name: "index_players_teams_on_team_id_and_player_id"
+    t.index ["player_id", "team_id"], name: "index_players_teams_on_player_id_and_team_id", using: :btree
+    t.index ["team_id", "player_id"], name: "index_players_teams_on_team_id_and_player_id", using: :btree
   end
 
   create_table "sports", force: :cascade do |t|
@@ -70,7 +73,11 @@ ActiveRecord::Schema.define(version: 20180416031426) do
     t.integer  "organization_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["organization_id"], name: "index_teams_on_organization_id"
+    t.index ["organization_id"], name: "index_teams_on_organization_id", using: :btree
   end
 
+  add_foreign_key "interests", "players"
+  add_foreign_key "interests", "sports"
+  add_foreign_key "players", "teams"
+  add_foreign_key "teams", "organizations"
 end
