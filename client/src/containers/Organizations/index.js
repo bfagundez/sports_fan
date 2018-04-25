@@ -6,9 +6,9 @@ class Organizations extends Component {
     super(props);
     this.state = { organizations :[]};
   }
-  
+
   componentDidMount(){
-    
+
     const requestOrgs = async () => {
       const response = await fetch(`/api/organizations`)
       const json = await response.json();
@@ -21,7 +21,7 @@ class Organizations extends Component {
   render() {
     return (
       <div>
-        <p> This is organization list </p> 
+        <p> This is organization list </p>
         <OrganizationList orgs={this.state.organizations} />
       </div>
     );

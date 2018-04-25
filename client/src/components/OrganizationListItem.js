@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 const OrganizationListItem = ({orgItem}) => (
-  <li> {orgItem.name} </li>
+  <li> <Link to={"/organizations/"+orgItem.id} >{orgItem.name}</Link> </li>
 )
 
 OrganizationListItem.propTypes = {

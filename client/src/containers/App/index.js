@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Footer from "components/Footer"
 import AppHeader from "components/Header"
+import OrganizationDetail from "containers/OrganizationDetail/index.js"
 import Organizations from "containers/Organizations/index.js"
 import Home from "containers/Home/index.js"
 import { Container, List, Icon, Divider } from 'semantic-ui-react'
@@ -11,7 +12,7 @@ const App = () => (
     <AppHeader />
       <Router>
         <Container>
-          <List horizontal align='center'> 
+          <List horizontal align='center'>
             <List.Item>
               <Icon circular name='home' />
               <List.Content verticalAlign='middle'>
@@ -28,6 +29,7 @@ const App = () => (
           <Container text>
           <Route exact path="/" component={Home} />
           <Route exact path="/organizations" component={Organizations} />
+          <Route exact path="/organizations/:id" component={OrganizationDetail} />
           </Container>
         </Container>
       </Router>
