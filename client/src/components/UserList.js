@@ -2,14 +2,14 @@ import React from 'react';
 import UserListItem from 'components/UserListItem';
 import PropTypes from 'prop-types';
 
-const UserList = ({orgs}) => ( 
+const UserList = ({users}) => ( 
   <ul>
-    {orgs.map(orgItem => <UserListItem orgItem={orgItem} key={orgItem.id} />)}
+    {users.map(userItem => <UserListItem userItem={userItem} key={userItem.id} />)}
   </ul>
 )
 
 UserList.propTypes = {
-  orgs: PropTypes.array.isRequired
+  users: PropTypes.array.isRequired
 }
 
 export default UserList;
