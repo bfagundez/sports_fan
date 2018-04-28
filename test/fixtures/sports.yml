@@ -2,8 +2,8 @@
 
 archery:
   name: Archery
-  image_url: 
+  icon_class: 
 
 swimming:
   name: swimming
-  image_url: 
+  icon_class: 
