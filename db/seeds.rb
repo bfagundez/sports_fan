@@ -14,9 +14,25 @@ end
 orgs = Organization.create(org_names)
 
 orgs.each do |org|
-  puts "For #{org.name} with id #{org.id}"
   10.times do 
     team = Team.create(name: "#{FFaker::Sport.name} #{FFaker::Education.school_name}", organization: org )
-    puts "Adding this team #{team.name}"
   end
 end
+
+players = []
+50.times do
+  first = FFaker::Name.first_name
+  last = FFaker::Name.last_name
+  email = "#{first}#{last}@#{FFaker::InternetSE.domain_name}"
+  players << { first_name: first,
+      last_name: last,
+      email: email,
+      height: rand(120...230).round(2),
+      weight: rand(50...90).round(2),
+      is_public: [true,false].sample,
+      team_id: Team.order("RANDOM()").first.id
+  }
+end
+
+players = Player.create(players)
+
