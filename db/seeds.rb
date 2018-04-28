@@ -34,5 +34,5 @@ players = []
   }
 end
 
-players = Player.create(players)
+players = User.create(players)
 

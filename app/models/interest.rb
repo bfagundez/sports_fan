@@ -1,5 +1,5 @@
-# Join table to display in what sports a player is interested
+# Join table to display in what sports a user is interested
 class Interest < ApplicationRecord
-  belongs_to :player
+  belongs_to :user
   belongs_to :sport
 end

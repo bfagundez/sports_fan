@@ -1,9 +1,9 @@
 class Api::UsersController < ApplicationController
   def index 
-    render json: Player.all
+    render json: User.all
   end
 
   def show
-    render json: Player.find(params[:id])
+    render json: User.find(params[:id])
   end
 end

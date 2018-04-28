@@ -1,5 +1,5 @@
-# Participation is the join table between players and sports
+# Participation is the join table between users and sports
 class Participation < ApplicationRecord
-  belongs_to :player
+  belongs_to :user
   belongs_to :sport
 end

@@ -1,5 +1,5 @@
-# Player model, has many teams, interests and participations
-class Player < ApplicationRecord
+# User model, has many teams, interests and participations
+class User < ApplicationRecord
   has_and_belongs_to_many :teams
   has_many :interests
   has_many :participations

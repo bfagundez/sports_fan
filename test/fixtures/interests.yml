@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 viktor_one:
-  player: viktor
+  user: viktor
   sport: archery
 
 viktor_two:
-  player: viktor
+  user: viktor
   sport: swimming
 
 alastor_one:
-  player: alastor
+  user: alastor
   sport: swimming

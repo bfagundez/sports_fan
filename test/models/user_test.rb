@@ -1,9 +1,9 @@
 require 'test_helper'
 
-class PlayerTest < ActiveSupport::TestCase
+class UserTest < ActiveSupport::TestCase
   def setup
-    @viktor = players(:viktor)
-    @alastor = players(:alastor)
+    @viktor = users(:viktor)
+    @alastor = users(:alastor)
   end
 
   test '#teams' do

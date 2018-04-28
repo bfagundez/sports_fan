@@ -2,8 +2,8 @@ require 'test_helper'
 
 class ParticipationTest < ActiveSupport::TestCase
   def setup
-    @viktor = players(:viktor)
-    @alastor = players(:alastor)
+    @viktor = users(:viktor)
+    @alastor = users(:alastor)
   end
 
   test '#teams' do
