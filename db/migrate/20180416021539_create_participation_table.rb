@@ -1,4 +1,4 @@
-class Participation < ActiveRecord::Migration[5.0]
+class CreateParticipationTable < ActiveRecord::Migration[5.0]
   def change
     create_table :participations do |t|
       t.belongs_to :sport, index: true
