@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     resources :organizations do
       get :teams, on: :member
     end
-    resources :users
+    resources :users do
+      get :participations, on: :member
+    end
   end 
 end
