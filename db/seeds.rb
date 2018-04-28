@@ -34,5 +34,33 @@ players = []
   }
 end
 
+sports = [
+    {name: 'American Football', icon_class: 'flaticon-american-football-ball'},
+    {name: 'Archery', icon_class: 'flaticon-arrow-shoot-on-target'},
+    {name: 'Gymnastics', icon_class: 'flaticon-artistic-gymnastics'},
+    {name: 'Athletism', icon_class: 'flaticon-athlete-jumping-silhouette'},
+    {name: 'Badminton', icon_class: 'flaticon-badminton-player'},
+    {name: 'Baseball', icon_class: 'flaticon-baseball-glove'},
+    {name: 'Basketball', icon_class: 'flaticon-basketball-frontal-basket'},
+    {name: 'Beach Soccer', icon_class: 'flaticon-beach-soccer-player-running-with-the-ball-on-the-sand'},
+    {name: 'Bowling', icon_class: 'flaticon-bowling-ball'},
+    {name: 'Boxing', icon_class: 'flaticon-box-gloves'},
+    {name: 'Climbing', icon_class: 'flaticon-climbing'},
+    {name: 'Criquet', icon_class: 'flaticon-criquet'},
+    {name: 'Equestrian Competition', icon_class: 'flaticon-equestrian-competition'},
+    {name: 'Golf', icon_class: 'flaticon-golf-player'},
+    {name: 'Hiking', icon_class: 'flaticon-hiking-hikers-on-mountain'},
+    {name: 'Hockey', icon_class: 'flaticon-hockey-helmet'},
+    {name: 'Ice Hockey', icon_class: 'flaticon-ice-hockey-player'},
+    {name: 'Ice Skating', icon_class: 'flaticon-ice-skating-silhouette'},
+    {name: 'KiteSurfing', icon_class: 'flaticon-kitesurfing'},
+    {name: 'Martial Arts', icon_class: 'flaticon-martial-art-posture-silhouette'},
+    {name: 'Car Racing', icon_class: 'flaticon-motoring'},
+    {name: 'Skating', icon_class: 'flaticon-skater-silhouette'},
+    {name: 'Soccer', icon_class: 'flaticon-soccer-ball'}
+ ]
+
+Sport.create(sports)
+
 players = User.create(players)
 
