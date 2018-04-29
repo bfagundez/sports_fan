@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import EditButton from 'components/EditButton'
 import UserHeader from 'components/UserHeader'
 import UserDataCard from 'components/UserDataCard'
 import ParticipationFeed from 'components/ParticipationFeed'
@@ -38,42 +39,31 @@ class UserProfile extends Component {
           <Grid.Row>
             <Grid.Column>
               <Header as='h4'>
-                <Header.Content>
-                  User Data
-                </Header.Content>
+                <EditButton /> User Data
               </Header>
              {user && <UserDataCard user={user} />}
             </Grid.Column>
             <Grid.Column>
               <Header as='h4'>
-                <Header.Content>
-                  Teams
-                </Header.Content>
+                 <EditButton /> Teams
               </Header>
               {user.teams && <Segment> <TeamList teams={user.teams} /> </Segment>}
             </Grid.Column>
             <Grid.Column>
               <Header as='h4'>
-                <Header.Content>
-                  Interests
-                </Header.Content>
+                 <EditButton /> Interests
               </Header>
                 {user.interests &&  <InterestList interests={user.interests} />}
             </Grid.Column>
           </Grid.Row>
         </Grid>
         <Divider />
-        <Grid columns={2} divided>
-          <Grid.Row>
-            <Grid.Column>
-              <Segment>
-                {user.participations && <ParticipationFeed participations={user.participations} />}
-              </Segment>
-            </Grid.Column>
-            <Grid.Column>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+        <Header as='h4'>
+          <EditButton /> Participations
+        </Header>
+        <Segment>
+          {user.participations && <ParticipationFeed participations={user.participations} />}
+        </Segment>
       </div>)
   }
 }
