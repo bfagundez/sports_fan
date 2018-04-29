@@ -1,7 +1,7 @@
 import React from 'react';
 import UserListItem from 'components/UserListItem';
 import PropTypes from 'prop-types';
-import { Button, List } from 'semantic-ui-react'
+import { List } from 'semantic-ui-react';
 
 const UserList = ({users}) => (
   <List divided verticalAlign='middle'>

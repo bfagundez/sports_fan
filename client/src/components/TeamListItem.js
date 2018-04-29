@@ -1,9 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
+import { List } from 'semantic-ui-react';
 
 const TeamListItem = ({team}) => (
-  <li> {team.name} </li>
+  <List.Item>
+    <List.Content floated='right'>
+    </List.Content>
+     <List.Content verticalAlign='bottom'>
+      {team.name}
+    </List.Content>
+  </List.Item>
 )
 
 TeamListItem.propTypes = {

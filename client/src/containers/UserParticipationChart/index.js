@@ -3,10 +3,6 @@ import PropTypes from 'prop-types'
 import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
 
 class UserParticipationChart extends Component {
-  constructor(props){
-    super(props)
-  }
-
   generateChartData(){
     let parts = this.props.participations
     let chartData = parts.map(p => ({
@@ -32,7 +28,7 @@ class UserParticipationChart extends Component {
            <Bar dataKey="minutes" fill="#8884d8" label="Time spent doing a sport in minutes" />
           </BarChart>)
   }
- 
+
   render(){
     return (
       <div>

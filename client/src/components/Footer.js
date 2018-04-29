@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Segment } from 'semantic-ui-react';
 
 class Footer extends Component {
   render() {
     return (
-      <footer >
-        <p> 2018 - Bruno Fagundez - Sports icons designed by <a href="http://www.freepik.com/">Freepik</a> from Flaticon</p>
-      </footer>
+      <Segment textAlign='center'>
+        2018 - <a href="http://www.geekymartian.com/"> Bruno Fagundez </a> - Sports icons designed by <a href="http://www.freepik.com/">Freepik</a> from Flaticon
+      </Segment>
     );
   }
 }
