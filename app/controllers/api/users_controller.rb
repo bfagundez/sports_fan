@@ -6,10 +6,15 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.where(id: params[:id])
-                .includes(:teams)
+                .complete
                 .first
 
-    render json: @user.as_json(include: :teams)
+    @included_json = [:teams,
+                      :participations,
+                      { interests:
+                        {include: :sport}
+                      }]
+    render json: @user.as_json(include: @included_json)
   end
 
   def participations

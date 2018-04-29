@@ -5,4 +5,6 @@ class User < ApplicationRecord
   has_many :participations
   has_many :sports, through: :participations, source: :sport
   has_many :sports, through: :interests, source: :sport
+
+  scope :complete, -> { includes(:teams, :interests, :participations) }
 end
