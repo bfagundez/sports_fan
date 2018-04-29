@@ -2,14 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import { Button, List } from 'semantic-ui-react'
+import { withRouter } from 'react-router-dom';
 
-const UserListItem = ({userItem}) => (
+const UserListItem = ({userItem, history}) => (
   <List.Item>
     <List.Content floated='right'>
       <Button.Group size='mini'>
-        <Button><Link to={"/my_profile/"+userItem.id} >Private Profile</Link></Button>
+        <Button onClick={() => {history.push("/my_profile/"+userItem.id)}}>
+          Private Profile
+        </Button>
         <Button.Or />
-        <Button><Link to={"/users/"+userItem.id} >Public Profile</Link> </Button>
+        <Button onClick={() => {history.push("/users/"+userItem.id)}}>
+          Public Profile
+        </Button>
       </Button.Group>
     </List.Content>
     <List.Content>
@@ -21,4 +26,4 @@ UserListItem.propTypes = {
   userItem: PropTypes.object.isRequired
 }
 
-export default UserListItem;
+export default withRouter(UserListItem);
