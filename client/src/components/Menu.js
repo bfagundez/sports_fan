@@ -1,32 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Menu } from 'semantic-ui-react';
 import { withRouter } from 'react-router-dom';
 
-class AppMenu extends Component {
-  render() {
-    const OrgsButton =
-           <Menu.Item
-            name='Organizations'
-            content='Organizations'
-            onClick={() => { this.props.history.push('/organizations') }}
-          />
-
-   const PeopleButton =
-           <Menu.Item
+const AppMenu = ({history}) => (
+      <Menu>
+          <Menu.Item
             name='users'
             content='Users'
-            onClick={() => {this.props.history.push('/users') }}
+            onClick={() => {history.push('/users') }}
           />
-
-
-    return (
-      <Menu>
-        {PeopleButton}
-        {OrgsButton}
-      </Menu>
-    );
-  }
-}
-
+          <Menu.Item
+            name='Organizations'
+            content='Organizations'
+            onClick={() => {history.push('/organizations') }}
+          />
+      </Menu>)
 
 export default withRouter(AppMenu);
