@@ -8,13 +8,13 @@
 
 org_names = []
 10.times do
-  org_names << { name: FFaker::Education.school	} 
+  org_names << { name: FFaker::Education.school }
 end
 
 orgs = Organization.create(org_names)
 
 orgs.each do |org|
-  10.times do 
+  15.times do
     Team.create(name: "#{FFaker::Sport.name} #{FFaker::Education.school_name}", organization: org )
   end
 end
@@ -59,18 +59,18 @@ users = []
       height: rand(120...230).round(2),
       weight: rand(50...90).round(2),
       is_public: [true,false].sample,
-      team_id: Team.order("RANDOM()").first.id
+      teams: Team.order("RANDOM()").limit(5)
   }
 end
 
 users = User.create(users)
 
-users.each do |u| 
+users.each do |u|
   100.times do
     u.participations.create(
       date: FFaker::Time.between('2018-02-20', '2018-04-28'),
-      duration: rand(0..100000),
-      user: u, 
+      duration: rand(0..10000),
+      user: u,
       sport: Sport.order("RANDOM()").first
     )
   end
