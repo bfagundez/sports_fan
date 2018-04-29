@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { List, Segment } from 'semantic-ui-react'
+import { List, Segment, Checkbox } from 'semantic-ui-react'
 
 const UserDataCard = ({user}) => (
   <Segment >
@@ -32,7 +32,7 @@ const UserDataCard = ({user}) => (
       <List.Item>
         <List.Content>
           <List.Header>Public profile</List.Header>
-          {user.is_public}
+           <Checkbox toggle checked={user.is_public} disabled />
         </List.Content>
       </List.Item>
     </List>

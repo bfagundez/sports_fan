@@ -17,7 +17,6 @@ class UserParticipationChart extends Component {
   }
 
   renderChart(){
-    console.log('rendering the chart!')
     return(<BarChart width={900} height={400} data={this.state.chartData}
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}>
            <CartesianGrid strokeDasharray="3 3"/>

@@ -1,6 +1,10 @@
 import React, { Component } from "react";
+import UserHeader from 'components/UserHeader'
+import UserDataCard from 'components/UserDataCard'
+import ParticipationFeed from 'components/ParticipationFeed'
 import UserParticipationChart from 'containers/UserParticipationChart'
 import moment from 'moment'
+import { Header, Icon, Grid, Segment, Divider } from 'semantic-ui-react'
 
 class UserDetail extends Component {
   constructor(props){
@@ -12,7 +16,6 @@ class UserDetail extends Component {
       participations: null
     }
   }
-
 
   componentDidMount(){
     const userId = this.state.profile.id
@@ -49,8 +52,30 @@ class UserDetail extends Component {
     const user = this.state.profile
 
     return(
-      <div>This is the user: {user.first_name} {user.last_name} <br/>
-      {this.renderUserParticipations()}
+      <div>
+       <UserHeader user={user} />
+       <Header>Last week participation summary</Header>
+        <Segment>
+          {this.renderUserParticipations()}
+        </Segment>
+
+        <Divider />
+        <Grid columns={2} divided>
+          <Grid.Row>
+            <Grid.Column>
+              <Header>Participation Feed</Header>
+              <Segment>
+                {user.participations && <ParticipationFeed participations={user.participations} />}
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+              <Header>User Information</Header>
+              {!user.is_public && <span>The user has a private profile</span>}
+              {user.is_public && <UserDataCard user={user} />}
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+
       </div>)
   }
 }

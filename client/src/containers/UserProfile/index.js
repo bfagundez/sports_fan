@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import UserHeader from 'components/UserHeader'
 import UserDataCard from 'components/UserDataCard'
 import ParticipationFeed from 'components/ParticipationFeed'
 import InterestList from 'components/InterestList'
@@ -31,12 +32,7 @@ class UserProfile extends Component {
     const user = this.state.profile
     return(
       <div>
-        <Header as='h2'>
-          <Icon name='user' />
-          <Header.Content>
-            {user.first_name} {user.last_name}
-          </Header.Content>
-        </Header>
+        <UserHeader user={user} />
         <Divider />
         <Grid columns={3} divided>
           <Grid.Row>
@@ -62,12 +58,24 @@ class UserProfile extends Component {
                   Interests
                 </Header.Content>
               </Header>
-              {user.interests && <Segment> <InterestList interests={user.interests} /> </Segment>}
+              <Segment>
+                {user.interests &&  <InterestList interests={user.interests} />}
+              </Segment>
             </Grid.Column>
           </Grid.Row>
         </Grid>
         <Divider />
-        {user.participations && <ParticipationFeed participations={user.participations} />}
+        <Grid columns={2} divided>
+          <Grid.Row>
+            <Grid.Column>
+              <Segment>
+                {user.participations && <ParticipationFeed participations={user.participations} />}
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
       </div>)
   }
 }
