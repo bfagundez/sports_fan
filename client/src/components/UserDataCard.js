@@ -19,13 +19,19 @@ const UserDataCard = ({user}) => (
       </List.Item>
       <List.Item>
         <List.Content>
-          <List.Header>height</List.Header>
+          <List.Header>Email</List.Header>
+          {user.email}
+        </List.Content>
+      </List.Item>
+      <List.Item>
+        <List.Content>
+          <List.Header>Height</List.Header>
           {user.height}
         </List.Content>
       </List.Item>
       <List.Item>
         <List.Content>
-          <List.Header>weight</List.Header>
+          <List.Header>Weight</List.Header>
           {user.weight}
         </List.Content>
       </List.Item>
