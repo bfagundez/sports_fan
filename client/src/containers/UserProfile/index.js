@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import EditButton from 'components/EditButton'
 import UserHeader from 'components/UserHeader'
 import UserDataCard from 'components/UserDataCard'
+import UserDataCardEdit from 'components/UserDataCardEdit'
 import ParticipationFeed from 'components/ParticipationFeed'
 import InterestList from 'components/InterestList'
 import TeamList from 'components/TeamList'
@@ -14,6 +15,7 @@ class UserProfile extends Component {
       profile: {
           id: this.props.match.params.id
       },
+      editUserData: false,
       participations: null
     }
   }
@@ -29,6 +31,14 @@ class UserProfile extends Component {
     requestUserData()
   }
 
+  renderUserDataCard(user){
+    if(this.state.editUserData){
+      return(<UserDataCardEdit user={user} />)
+    } else {
+      return(<UserDataCard user={user} />)
+    }
+  }
+
   render() {
     const user = this.state.profile
     return(
@@ -39,19 +49,19 @@ class UserProfile extends Component {
           <Grid.Row>
             <Grid.Column>
               <Header as='h4'>
-                <EditButton /> User Data
+                {!this.state.editUserData && <EditButton onClick={() => this.setState({editUserData:true})} />} User Data
               </Header>
-             {user && <UserDataCard user={user} />}
+             {user && this.renderUserDataCard(user)}
             </Grid.Column>
             <Grid.Column>
               <Header as='h4'>
-                 <EditButton /> Teams
+                Teams
               </Header>
               {user.teams && <Segment> <TeamList teams={user.teams} /> </Segment>}
             </Grid.Column>
             <Grid.Column>
               <Header as='h4'>
-                 <EditButton /> Interests
+                Interests
               </Header>
                 {user.interests &&  <InterestList interests={user.interests} />}
             </Grid.Column>
@@ -59,7 +69,7 @@ class UserProfile extends Component {
         </Grid>
         <Divider />
         <Header as='h4'>
-          <EditButton /> Participations
+          Participations
         </Header>
         <Segment>
           {user.participations && <ParticipationFeed participations={user.participations} />}
