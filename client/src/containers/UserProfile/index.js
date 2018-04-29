@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import UserDataCard from 'components/UserDataCard'
+import ParticipationFeed from 'components/ParticipationFeed'
 import InterestList from 'components/InterestList'
 import TeamList from 'components/TeamList'
 import { Header, Icon, Grid, Segment, Divider } from 'semantic-ui-react'
@@ -65,6 +66,8 @@ class UserProfile extends Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
+        <Divider />
+        {user.participations && <ParticipationFeed participations={user.participations} />}
       </div>)
   }
 }

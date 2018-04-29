@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { List, Icon } from 'semantic-ui-react';
+import { List } from 'semantic-ui-react';
 
 const InterestListItem = ({interest}) => (
   <List.Item>

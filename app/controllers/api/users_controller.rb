@@ -10,7 +10,8 @@ class Api::UsersController < ApplicationController
                 .first
 
     @included_json = [:teams,
-                      :participations,
+                      { participations:
+                        {include: :sport}},
                       { interests:
                         {include: :sport}
                       }]
