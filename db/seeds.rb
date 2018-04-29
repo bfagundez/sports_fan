@@ -66,9 +66,9 @@ end
 users = User.create(users)
 
 users.each do |u| 
-  10.times do
+  100.times do
     u.participations.create(
-      date: FFaker::Time.between('2015-11-12', '2018-11-12'),
+      date: FFaker::Time.between('2018-02-20', '2018-04-28'),
       duration: rand(0..100000),
       user: u, 
       sport: Sport.order("RANDOM()").first

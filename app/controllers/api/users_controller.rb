@@ -8,6 +8,12 @@ class Api::UsersController < ApplicationController
   end
 
   def participations
-    render json: User.find(params[:id]).participations
+    query = Participation.where(user: params[:id])
+    if params[:start_date] && params[:end_date]
+      query = query.between(params[:start_date], params[:end_date])
+    end
+    query = query.by_sport if params[:aggregate] == 'sports'
+    query = query.filter(params[:filter_by]) if params[:filter_by]
+    render json: query.includes(:sport).all.as_json(include: :sport)
   end
 end
