@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import UserHeader from 'components/UserHeader'
 import UserDataCard from 'components/UserDataCard'
 import ParticipationFeed from 'components/ParticipationFeed'
+import InterestList from 'components/InterestList'
 import UserParticipationChart from 'containers/UserParticipationChart'
 import moment from 'moment'
 import { Header, Icon, Grid, Segment, Divider } from 'semantic-ui-react'
@@ -72,10 +73,12 @@ class UserDetail extends Component {
               <Header>User Information</Header>
               {!user.is_public && <span>The user has a private profile</span>}
               {user.is_public && <UserDataCard user={user} />}
+              <Divider />
+              <Header>Interests</Header>
+              {user.interests &&  <InterestList interests={user.interests} />}
             </Grid.Column>
           </Grid.Row>
         </Grid>
-
       </div>)
   }
 }

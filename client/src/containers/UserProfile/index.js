@@ -21,7 +21,7 @@ class UserProfile extends Component {
     const userId = this.state.profile.id
 
     const requestUserData = async () => {
-      const response = await fetch(`/api/users/${userId}`)
+      const response = await fetch(`/api/users/${userId}?my_profile=true`)
       const json = await response.json();
       this.setState({ profile: json })
     }
@@ -58,9 +58,7 @@ class UserProfile extends Component {
                   Interests
                 </Header.Content>
               </Header>
-              <Segment>
                 {user.interests &&  <InterestList interests={user.interests} />}
-              </Segment>
             </Grid.Column>
           </Grid.Row>
         </Grid>

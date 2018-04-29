@@ -7,6 +7,7 @@ const UserHeader = ({user}) => (
           <Icon name='user' />
           <Header.Content>
             {user.first_name} {user.last_name}
+            {!user.first_name && 'Anonymous User'}
           </Header.Content>
         </Header>
 )

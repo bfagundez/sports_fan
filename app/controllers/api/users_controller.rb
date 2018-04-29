@@ -9,13 +9,7 @@ class Api::UsersController < ApplicationController
                 .complete
                 .first
 
-    @included_json = [:teams,
-                      { participations:
-                        {include: :sport}},
-                      { interests:
-                        {include: :sport}
-                      }]
-    render json: @user.as_json(include: @included_json)
+    render json: @user.as_json(include: user_included_collections, except: user_excluded_fields)
   end
 
   def participations
@@ -55,6 +49,19 @@ class Api::UsersController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :height, :weight, :is_public)
+    params.require(:user).permit(:first_name, :last_name, :email, :height, :weight, :is_public, :my_profile)
+  end
+
+  def user_included_collections
+    [:teams,
+     { participations:
+       {include: :sport}},
+    { interests:
+      {include: :sport}
+    }]
+  end
+
+  def user_excluded_fields
+    [:email, :height, :weight, :first_name, :last_name] unless @user.is_public || params[:my_profile]
   end
 end
