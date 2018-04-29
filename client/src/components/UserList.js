@@ -1,11 +1,12 @@
 import React from 'react';
 import UserListItem from 'components/UserListItem';
 import PropTypes from 'prop-types';
+import { Button, List } from 'semantic-ui-react'
 
-const UserList = ({users}) => ( 
-  <ul>
+const UserList = ({users}) => (
+  <List divided verticalAlign='middle'>
     {users.map(userItem => <UserListItem userItem={userItem} key={userItem.id} />)}
-  </ul>
+  </List>
 )
 
 UserList.propTypes = {
