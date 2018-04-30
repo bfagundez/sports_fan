@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import OrganizationList from 'components/OrganizationList'
+import { Header } from 'semantic-ui-react';
 
 class Organizations extends Component {
   constructor(props){
@@ -21,7 +22,7 @@ class Organizations extends Component {
   render() {
     return (
       <div>
-        <p> This is organization list </p>
+        <Header size='medium'>Organizations</Header>
         <OrganizationList orgs={this.state.organizations} />
       </div>
     );

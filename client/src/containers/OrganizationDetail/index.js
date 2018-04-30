@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TeamList from 'components/TeamList'
+import { Header } from 'semantic-ui-react';
 
 class OrganizationDetail extends Component {
   constructor(props){
@@ -35,9 +36,13 @@ class OrganizationDetail extends Component {
 
   render() {
     return(
-      <div>This is the organization: {this.state.orgData.name} <br/>
-     <p>List of teams:</p>
-      <TeamList teams={this.state.orgTeams} />
+      <div>
+        <Header size='medium'>{this.state.orgData.name}
+          <Header.Subheader>
+            List of Teams
+          </Header.Subheader>
+        </Header>
+        <TeamList teams={this.state.orgTeams} />
       </div>)
   }
 }

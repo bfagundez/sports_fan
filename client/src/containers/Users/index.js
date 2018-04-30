@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserList from 'components/UserList'
+import { Header } from 'semantic-ui-react';
 
 class Users extends Component {
   constructor(props){
@@ -20,7 +21,7 @@ class Users extends Component {
   render() {
     return (
       <div>
-        <p> User list: </p>
+        <Header size='medium'>Users</Header>
         <UserList users={this.state.users} />
       </div>
     );
