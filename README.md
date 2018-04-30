@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Test app created using [Create React App](https://github.com/facebook/create-react-app) and [Rails 5 Api](http://rubyonrails.org/).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The live app can be [seen here](https://vast-ravine-72640.herokuapp.com).
