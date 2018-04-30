@@ -17,7 +17,7 @@ const App = () => (
       <Router>
         <Container>
           <AppMenu />
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Users} />
           <Route exact path="/organizations" component={Organizations} />
           <Route exact path="/organizations/:id" component={OrganizationDetail} />
           <Route exact path="/users" component={Users} />
