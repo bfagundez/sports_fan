@@ -5,7 +5,7 @@ import ParticipationFeed from 'components/ParticipationFeed'
 import InterestList from 'components/InterestList'
 import UserParticipationChart from 'containers/UserParticipationChart'
 import moment from 'moment'
-import { Header, Icon, Grid, Segment, Divider } from 'semantic-ui-react'
+import { Header, Grid, Segment, Divider } from 'semantic-ui-react'
 
 class UserDetail extends Component {
   constructor(props){

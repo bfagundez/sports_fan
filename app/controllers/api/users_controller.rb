@@ -5,11 +5,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.where(id: params[:id])
-                .complete
-                .first
-
-    render json: @user.as_json(include: user_included_collections, except: user_excluded_fields)
+    render json: full_user
   end
 
   def participations
@@ -34,13 +30,20 @@ class Api::UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      render json: @user
+      render json: full_user
     else
       render json: @user.errors, status: :unprocessable_entity
     end
   end
 
   private
+
+  def full_user
+    @user = User.where(id: params[:id])
+                .complete
+                .first
+    @user.as_json(include: user_included_collections, except: user_excluded_fields)
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user
@@ -49,19 +52,18 @@ class Api::UsersController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :height, :weight, :is_public, :my_profile)
+    params.require(:user).permit(:first_name, :last_name, :email, :height, :weight, :is_public)
   end
 
   def user_included_collections
     [:teams,
      { participations:
-       {include: :sport}},
-    { interests:
-      {include: :sport}
-    }]
+       { include: :sport } },
+     { interests:
+       { include: :sport } }]
   end
 
   def user_excluded_fields
-    [:email, :height, :weight, :first_name, :last_name] unless @user.is_public || params[:my_profile]
+    %i[email height weight first_name last_name] unless @user.is_public || params[:my_profile]
   end
 end

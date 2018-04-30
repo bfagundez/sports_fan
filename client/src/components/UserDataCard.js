@@ -46,7 +46,7 @@ const UserDataCard = ({user}) => (
 )
 
 UserDataCard.propTypes = {
-  user: PropTypes.array.isRequired
+  user: PropTypes.object.isRequired
 }
 
 export default UserDataCard;

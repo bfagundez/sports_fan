@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Feed, Icon } from 'semantic-ui-react'
+import { Feed } from 'semantic-ui-react'
 import moment from 'moment'
 
 const ParticipationFeedItem = ({participation}) => (
