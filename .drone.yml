@@ -7,4 +7,5 @@ steps:
 - name: greeting
   image: node:10.15.3-alpine
   commands:
+  - ls -lha
   - node -v
