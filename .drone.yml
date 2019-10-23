@@ -9,3 +9,14 @@ steps:
   commands:
   - ls -lha
   - node -v
+- name: publish
+  image: plugins/ecr
+  settings:
+    access_key:
+      from_secret: aws_access_key
+    secret_key:
+      from_secret: aws_secret_key
+    repo: mizzen-client
+    registry: 463539813050.dkr.ecr.us-west-1.amazonaws.com/mizzen-client
+    tags:
+      - latest
