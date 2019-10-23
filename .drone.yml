@@ -18,6 +18,6 @@ steps:
       from_secret: aws_secret_key
     repo: mizzen-client
     region: us-west-1
-    registry: 463539813050.dkr.ecr.us-west-1.amazonaws.com/mizzen-client
+    registry: 463539813050.dkr.ecr.us-west-1.amazonaws.com
     tags:
       - latest
