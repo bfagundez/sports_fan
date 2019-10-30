@@ -1,23 +1,6 @@
----
-kind: pipeline
-type: docker
-name: default
-
-steps:
-- name: docker
-  image: node:10.15.3-alpine
-  commands:
-  - ls -lha
-  - node -v
-- name: publish
-  image: plugins/ecr
-  settings:
-    access_key:
-      from_secret: aws_access_key
-    secret_key:
-      from_secret: aws_secret_key
-    repo: mizzen-client
-    region: us-west-1
-    registry: 463539813050.dkr.ecr.us-west-1.amazonaws.com
-    tags:
-      - latest
+pipeline:
+  build:
+    image: node:latest
+    commands:
+      - npm install
+      - npm run test
