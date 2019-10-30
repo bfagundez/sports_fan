@@ -1,3 +1,6 @@
+---
+kind: pipeline
+
 pipeline:
   build:
     image: node:latest
