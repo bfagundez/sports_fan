@@ -12,7 +12,7 @@ gem 'rubocop', require: false
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
 gem 'foreman', '~> 0.82.0'
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.12'
 gem 'ffaker'
 gem 'pg'
 gem 'rails-erd'
